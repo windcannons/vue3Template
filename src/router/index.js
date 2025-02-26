@@ -14,6 +14,10 @@ const router = createRouter({
       path: '/details',
       name: 'details',
       component: () => import('../views/detailsView.vue')
+    },
+    {
+      path: '/:catchAll(.*)', // 匹配所有路径
+      redirect: '/' // 重定向到首页
     }
   ]
 })

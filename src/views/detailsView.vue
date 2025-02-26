@@ -1,11 +1,15 @@
 <template>
     <div class="meView">
         <input
+                v-is-phone
                 type="text"
                 name=""
                 @input="setInp"
                 id="">
-        <p>{{text}}</p>
+        <p>
+            {{
+            text
+            }}</p>
     </div>
 </template>
 
@@ -17,6 +21,7 @@ import {
 import {
     ref
 } from "vue";
+
 let text = ref("😊")
 
 // 方法触发的防抖 可手动配置时间
@@ -26,22 +31,25 @@ const setInp = debounceFn(((e) => {
 </script>
 
 <style
-    scoped lang="less">
-.meView{
-    height: 60vh;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    p{
-        margin-top: 100px;
-    }
-    input{
-        width: 50vw;
-        height: 40px;
-        border-radius: 999px;
-        padding-left: 10px;
-    }
+    scoped
+    lang="less">
+.meView {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  p {
+    margin-top: 100px;
+  }
+
+  input {
+    width: 50vw;
+    height: 40px;
+    border-radius: 999px;
+    padding-left: 10px;
+    background-color: skyblue;
+  }
 }
 </style>

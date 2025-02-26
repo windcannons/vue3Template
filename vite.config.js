@@ -2,7 +2,6 @@ import {
   fileURLToPath,
   URL
 } from 'node:url'
-
 import {
   defineConfig
 } from 'vite'
@@ -12,6 +11,16 @@ import vue
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  build:{
+    minify:"terser",
+    terserOptions:{
+      // 配置打包完取消打印和debugger
+      compress:{
+        drop_console:true,
+        drop_debugger:true
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -20,15 +29,18 @@ export default defineConfig({
   server: {
     proxy: {
       host: "localhost",
-      port: "5173",
+      port: "5174",
       open: "true",
       https: "true",
       cors: "true",
       "/api": {
-        target: "https://examreadygo.examreadygo.com",
+        target: "http://192.168.3.117:7021",
+        // target: "https://www.likefigure8.com",
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     },
   },
