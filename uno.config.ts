@@ -9,4 +9,13 @@ export default defineConfig({
             baseFontSize: 4,
         }),
     ],
+    // 媒体查询
+    theme: {
+        breakpoints: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+        },
+    },
 })
