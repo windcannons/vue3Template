@@ -1,11 +1,11 @@
 <template>
 <div
-    class="headerView">
+    class="flex bg-red">
   <RouterLink to="/">
       首页
   </RouterLink>
     <RouterLink to="/details">
-        首页
+        详情
     </RouterLink>
 </div>
 </template>

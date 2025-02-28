@@ -1,5 +1,4 @@
 import './assets/main.less'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import './plugins/setRem'
@@ -14,7 +13,9 @@ import 'swiper/css';
 import 'swiper/swiper-bundle.css'
 import piniaPluginPersist from 'pinia-plugin-persist'
 import isPhone
-    from "@/utils/isPhone";
+    from "./utils/isPhone";
+// main.ts
+import 'virtual:uno.css'
 
 
 const Pinia = createPinia()

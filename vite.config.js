@@ -7,16 +7,21 @@ import {
 } from 'vite'
 import vue
   from '@vitejs/plugin-vue'
+import UnoCSS
+  from 'unocss/vite'
 
 export default defineConfig({
-  plugins: [vue()],
-  build:{
-    minify:"terser",
-    terserOptions:{
+  plugins: [
+    vue(),
+    UnoCSS(),
+  ],
+  build: {
+    minify: "terser",
+    terserOptions: {
       // 配置打包完取消打印和debugger
-      compress:{
-        drop_console:true,
-        drop_debugger:true
+      compress: {
+        drop_console: true,
+        drop_debugger: true
       }
     }
   },
