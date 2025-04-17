@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // 通过axios创建实例
 let requests =axios.create({
-    baseURL:'/',
+    baseURL:'/api',
     timeout: 10000,
 })
 

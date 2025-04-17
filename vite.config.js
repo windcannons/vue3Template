@@ -9,11 +9,16 @@ import vue
   from '@vitejs/plugin-vue'
 import UnoCSS
   from 'unocss/vite'
+import ViteVueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [
     vue(),
     UnoCSS(),
+    ViteVueDevTools({
+      open: true,
+      devtoolsUrl: 'webstorm://open?file=E:/path-to-your-project/src/App.vue'
+    })
   ],
   build: {
     minify: "terser",
@@ -41,9 +46,7 @@ export default defineConfig({
         target: "http://192.168.3.117:7021",
         changeOrigin: true,
         secure: false,
-        pathRewrite: {
-          '^/api': ''
-        }
+        rewrite:(path)=>path.replace(/^\/api/,'') //api替换为'',
       }
     },
   },
