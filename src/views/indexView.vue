@@ -18,13 +18,7 @@
 import {
     useUserStore
 } from '@/stores/counter'
-import bus
-    from "../bus";
-import MySwiper
-    from "@/components/MySwiper.vue";
-import MyEcharts
-    from "@/components/MyEcharts.vue";
-
+import bus from "@/bus/index.js";
 
 const userStore = useUserStore()
 let add = () => {
@@ -39,7 +33,6 @@ let add = () => {
     bus.emit('msg', {name: '小黑'})
 
 }
-
 
 // 跳转
 // router.push({path: '/orderDetail'})
