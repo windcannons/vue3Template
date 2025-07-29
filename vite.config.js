@@ -33,7 +33,8 @@ export default defineConfig({
 
     ViteVueDevTools({
       open: true,
-      devtoolsUrl: 'webstorm://open?file=E:/path-to-your-project/src/App.vue'
+      devtoolsUrl: '',
+      launchEditor: 'webstorm'
     })
   ],
   build: {
